@@ -12,3 +12,11 @@ logs
 results
 
 npm-debug.log
+
+# libraries
+node_modules
+
+# vim swap files
+*.swp
+
+.idea
