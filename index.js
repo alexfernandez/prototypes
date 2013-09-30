@@ -7,10 +7,10 @@
 
 
 // requires
-var stringLib = require('./lib/string.js');
+require('./lib/string.js');
 var objectLib = require('./lib/object.js');
 
 // exports
-objectLib.overwriteObject(exports, stringLib);
+objectLib.overwriteObject(exports, objectLib);
 
 

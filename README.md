@@ -25,6 +25,8 @@ do this:
 
     var prototypes = require('prototypes');
 
+This last form is required if you use any of the exported object functions.
+
 ## String Prototypes
 
 The following string prototypes are provided.
@@ -89,4 +91,27 @@ Example:
     'ab'.repeat(3);
        \=> 'ababab'
 
+## Object Functions
+
+For objects it is not wise to overwrite `Object.prototype`, since it will
+probably break all code that does not check for hasOwnProperty().
+See [MSDN help](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty).
+Therefore a few utility functions are provided.
+
+### countProperties(object)
+
+Count the number of properties in an object.
+Does not count inherited properties: uses hasOwnProperty().
+Example:
+
+    prototypes.countProperties({a: 'a'});
+      \=> 1
+
+### overwriteObject(original, overwrite)
+
+Overwrite properties in the original with the given object.
+Example:
+
+    prototypes.overwriteObject({a: 'a'}, {b: 'b'});
+      \=> {a: 'a', b: 'b'}
 
