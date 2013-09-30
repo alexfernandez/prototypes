@@ -1,6 +1,6 @@
 {
 	"name": "prototypes",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "Some common prototypes for node.js.",
 	"homepage": "https://github.com/alexfernandez/prototypes",
 	"contributors": ["Alex Fernández <alexfernandeznpm@gmail.com>"],
