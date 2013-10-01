@@ -67,6 +67,14 @@ Example:
     'hi.there'.substringFrom('.');
        \=> 'there'
 
+### string.substringFromLast(str)
+
+Return the piece from the last occurrence of the argument; empty string if not found.
+Example:
+
+    'hi.there.you'.substringFromLast('.');
+       \=> 'you'
+
 ### string.contains(str)
 
 Find out if the string contains the argument at any position.
@@ -90,6 +98,14 @@ Example:
 
     'ab'.repeat(3);
        \=> 'ababab'
+
+### string.capitalize()
+
+Capitalize a string: first letter upper case, rest as is.
+Example:
+
+    'hello'.capitalize();
+       \=> 'Hello'
 
 ## Object Functions
 
