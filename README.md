@@ -31,35 +31,35 @@ This last form is required if you use any of the exported object functions.
 
 The following string prototypes are provided.
 
-### startsWith(str)
+### string.startsWith(str)
 
 Check that the current string starts with the given substring. Example:
 
     'pepitus'.startsWith('pep');
       \=> true
 
-### endsWith(str)
+### string.endsWith(str)
 
 Check that the current string ends with the given substring. Example:
 
     'pepitus'.startsWith('tus');
       \=> true
 
-### substringUpTo(str)
+### string.substringUpTo(str)
 
 Return the piece of string until the argument is found. Example:
 
     'hi.there'.substringUpTo('.');
        \=> 'hi'
 
-### substringUpToLast(str)
+### string.substringUpToLast(str)
 
 Return the piece of string until the last occurrence of the argument. Example:
 
     'hi.there.you'.substringUpToLast('.');
        \=> 'hi.there'
 
-### substringFrom(str)
+### string.substringFrom(str)
 
 Return the piece of string starting with the argument; empty string if not found.
 Example:
@@ -67,7 +67,7 @@ Example:
     'hi.there'.substringFrom('.');
        \=> 'there'
 
-### contains(str)
+### string.contains(str)
 
 Find out if the string contains the argument at any position.
 Example:
@@ -75,7 +75,7 @@ Example:
     'abcde'.contains('bcd');
        \=> true
 
-### replaceAll(str, replacement)
+### string.replaceAll(str, replacement)
 
 Replace all occurrences of a string with the replacement.
 Example:
@@ -83,7 +83,7 @@ Example:
     'pepitus'.replaceAll('p', 'c');
        \=> 'cecitus'
 
-### repeat(number)
+### string.repeat(number)
 
 Repeat the given string a few times.
 Example:
@@ -114,4 +114,43 @@ Example:
 
     prototypes.overwriteObject({a: 'a'}, {b: 'b'});
       \=> {a: 'a', b: 'b'}
+
+## Math-related Functions
+
+There are math functions in `Math`, in `Number.prototype` and even as globals,
+e.g. `parseInt()`.
+
+### parseInt(string)
+
+By default parseInt() requires a radix (or base), or it will recreate the radix itself:
+if the string starts with a leading zero,
+then it interprets that you are parsing an octal number.
+
+    // unsafe parseInt()
+    parseInt('010');
+      \=> 8
+
+This library replaces the global function with a safe version that uses radix 10
+unless told otherwise.
+The last person that wanted to convert octal with leading zeroes
+is probably programming in Lisp anyway.
+Example:
+
+    parseInt('010');
+      \=> 10
+
+### Math.log10(number)
+
+Logarithm in base 10. Example:
+
+    Math.log10(10);
+      \=> 1
+
+### number.toRad()
+
+Convert a number in degrees to radians. Example:
+
+    var n = 180;
+    n.toRad();
+      \=> 3.141592653589793
 
