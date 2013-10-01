@@ -11,6 +11,5 @@ require('./lib/string.js');
 var objectLib = require('./lib/object.js');
 
 // exports
-objectLib.overwriteObject(exports, objectLib);
-
+exports.overwriteWith(objectLib);
 

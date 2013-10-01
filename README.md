@@ -25,7 +25,8 @@ do this:
 
     var prototypes = require('prototypes');
 
-This last form is required if you use any of the exported object functions.
+This last form is only required if you use any of the exported functions,
+which should be seldom the case.
 
 ## String Prototypes
 
@@ -109,26 +110,28 @@ Example:
 
 ## Object Functions
 
-For objects it is not wise to overwrite `Object.prototype`, since it will
-probably break all code that does not check for hasOwnProperty().
-See [MSDN help](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty).
-Therefore a few utility functions are provided.
+For objects some care must be taken before overwriting `Object.prototype`:
+otherwise it might break all code that does not check for hasOwnProperty().
+See [MDN help](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty).
+In this library all extensions are done using `Object.defineProperty()`
+which does not pollute objects as the new properties are not enumerable.
+Again, see [MDN help](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty).
 
-### countProperties(object)
+### object.countProperties(object)
 
 Count the number of properties in an object.
 Does not count inherited properties: uses hasOwnProperty().
 Example:
 
-    prototypes.countProperties({a: 'a'});
+    {a: 'a'}.countProperties();
       \=> 1
 
-### overwriteObject(original, overwrite)
+### object.overwriteWith(overwriter)
 
 Overwrite properties in the original with the given object.
 Example:
 
-    prototypes.overwriteObject({a: 'a'}, {b: 'b'});
+    {a: 'a'}.overwriteWith({b: 'b'});
       \=> {a: 'a', b: 'b'}
 
 ## Math-related Functions

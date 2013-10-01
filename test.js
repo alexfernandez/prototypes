@@ -15,13 +15,19 @@ var log = new Log('info');
 
 /**
  * Test that a new object is clean: has no functions.
+ * Same for string and array.
  */
-function testCleanObject(callback)
+function testCleanObjects(callback)
 {
 	var object = {};
 	for (var key in object)
 	{
 		testing.fail('New object has attribute %s', key, callback);
+	}
+	var string = '';
+	for (key in string)
+	{
+		testing.fail('New string has attribute %s', key, callback);
 	}
 	testing.success(callback);
 }
@@ -33,7 +39,7 @@ exports.test = function(callback)
 {
 	log.debug('Running tests');
 	var tests = {
-		cleanObject: testCleanObject,
+		cleanObjects: testCleanObjects,
 	};
 	var libs = [ 'string', 'object' ];
 	libs.forEach(function(lib)
