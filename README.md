@@ -75,7 +75,7 @@ Example:
     'abcde'.contains('bcd');
        \=> true
 
-### replaceAll(str)
+### replaceAll(str, replacement)
 
 Replace all occurrences of a string with the replacement.
 Example:
