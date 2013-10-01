@@ -7,10 +7,6 @@
 
 // requires
 var testing = require('testing');
-var Log = require('log');
-
-// globals
-var log = new Log('info');
 
 
 /**
@@ -37,7 +33,6 @@ function testCleanObjects(callback)
  */
 exports.test = function(callback)
 {
-	log.debug('Running tests');
 	var tests = {
 		cleanObjects: testCleanObjects,
 	};
