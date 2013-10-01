@@ -12,6 +12,7 @@
 	"curly": true,      // Require curly braces in every scope
 	"unused": true,     // Do not allow unused vars
 	"funcscope": false, // Do not allow using a var out of its virtual scope
+	"-W065": true,      // Do not require radix as we use a safe parseInt
 	"loopfunc": true,   // Allow functions in loops
 	"undef": true       // Force vars declaration before using them
 }
