@@ -14,12 +14,27 @@ var log = new Log('info');
 
 
 /**
+ * Test that a new object is clean: has no functions.
+ */
+function testCleanObject(callback)
+{
+	var object = {};
+	for (var key in object)
+	{
+		testing.fail('New object has attribute %s', key, callback);
+	}
+	testing.success(callback);
+}
+
+/**
  * Run all module tests.
  */
 exports.test = function(callback)
 {
 	log.debug('Running tests');
-	var tests = {};
+	var tests = {
+		cleanObject: testCleanObject,
+	};
 	var libs = [ 'string', 'object' ];
 	libs.forEach(function(lib)
 	{
