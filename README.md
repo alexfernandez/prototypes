@@ -2,7 +2,9 @@
 
 # prototypes
 
-Some common prototypes for node.js.
+Some common prototypes for node.js: string.startsWith(),
+object.countProperties() and more.
+Functions are added using Object.defineProperty() to avoid polluting new objects.
 
 ## Installation
 
