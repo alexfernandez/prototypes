@@ -36,7 +36,7 @@ exports.test = function(callback)
 	var tests = {
 		cleanObjects: testCleanObjects,
 	};
-	var libs = [ 'string', 'object' ];
+	var libs = [ 'string', 'math', 'object' ];
 	libs.forEach(function(lib)
 	{
 		tests[lib] = require('./lib/' + lib + '.js').test;
