@@ -1,6 +1,6 @@
 {
 	"name": "prototypes",
-	"version": "0.1.2",
+	"version": "0.1.3",
 	"description": "Some common prototypes for node.js: string.startsWith(), object.countProperties() and more. Functions are added using Object.defineProperty() to avoid polluting new objects.",
 	"homepage": "https://github.com/alexfernandez/prototypes",
 	"contributors": ["Alex Fernández <alexfernandeznpm@gmail.com>"],
