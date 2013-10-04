@@ -119,10 +119,10 @@ In this library all extensions are done using `Object.defineProperty()`
 which does not pollute objects as the new properties are not enumerable.
 Again, see [MDN help](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty).
 
-### object.countProperties(object)
+### object.countProperties()
 
 Count the number of properties in an object.
-Does not count inherited properties: uses hasOwnProperty().
+Does not count inherited properties: uses Object.keys().
 Example:
 
     {a: 'a'}.countProperties();
