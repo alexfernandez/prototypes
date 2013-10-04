@@ -119,13 +119,21 @@ In this library all extensions are done using `Object.defineProperty()`
 which does not pollute objects as the new properties are not enumerable.
 Again, see [MDN help](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty).
 
-### object.countProperties()
+### object.countProperties(filter)
 
 Count the number of properties in an object.
 Does not count inherited properties: uses Object.keys().
 Example:
 
     {a: 'a'}.countProperties();
+      \=> 1
+
+You can also pass a string or a function as a filter:
+
+    {hello: 'a'}.countProperties('ll');
+      \=> 1
+
+    {hello: 'a'}.countProperties(function(key) { return key.length == 5 });
       \=> 1
 
 ### object.overwriteWith(overwriter)
