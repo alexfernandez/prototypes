@@ -86,6 +86,15 @@ Example:
     'abcde'.contains('bcd');
        \=> true
 
+### string.containsIgnoreCase(str)
+
+Find out if the string contains the argument at any position,
+ignoring case.
+Example:
+
+    'aBcDe'.contains('bCd');
+       \=> true
+
 ### string.replaceAll(str, replacement)
 
 Replace all occurrences of a string with the replacement.
