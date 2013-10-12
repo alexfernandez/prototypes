@@ -30,6 +30,13 @@ do this:
 This last form is only required if you use any of the exported functions,
 which should be seldom the case.
 
+### License
+
+This package is published under the MIT license.
+You can integrate it in any commercial, closed software and/or make changes to the code with complete liberty.
+If you send your changes back to the main repo we will be grateful,
+but it is by no means required.
+
 ## String Prototypes
 
 The following string prototypes are provided.
