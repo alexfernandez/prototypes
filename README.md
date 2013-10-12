@@ -192,3 +192,10 @@ Convert a number in degrees to radians. Example:
     n.toRad();
       \=> 3.141592653589793
 
+## Acknowledgements
+
+Thanks to my current employer [MediaSmart Mobile](http://www.mediasmart.es/) for their permission to reuse some of the prototypes we have cooked together.
+
+Thanks to [William Wicks](https://github.com/williamwicks) for letting me
+(even encouraging me to) plunder his [extensions](https://github.com/williamwicks/extensions) library.
+
