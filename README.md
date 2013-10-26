@@ -126,7 +126,7 @@ Example:
     'hello'.capitalize();
        \=> 'Hello'
 
-## Object Functions
+## Object Prototypes
 
 For objects some care must be taken before overwriting `Object.prototype`:
 otherwise it might break all code that does not check for hasOwnProperty().
@@ -178,7 +178,7 @@ then it interprets that you are parsing an octal number.
 This library replaces the global function with a safe version that uses radix 10
 unless told otherwise.
 The last person that wanted to convert octal with leading zeroes
-is probably programming in Lisp anyway.
+is probably programming in C anyway.
 Example:
 
     parseInt('010');
@@ -198,6 +198,19 @@ Convert a number in degrees to radians. Example:
     var n = 180;
     n.toRad();
       \=> 3.141592653589793
+
+## RegExp Prototypes
+
+Prototypes used to enhance regular expressions (the RegExp prototype). Can also be used with the syntax
+/.../.
+
+### makeGlobal()
+
+Returns a new regular expression which is always global.
+Example:
+
+    'pepitus'.replace(/p/.makeGlobal(), 'c');
+      \=> 'cecitus'
 
 ## Acknowledgements
 
