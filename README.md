@@ -162,8 +162,8 @@ Example:
 
 ## Math-related Functions
 
-There are math functions in `Math`, in `Number.prototype` and even as globals,
-e.g. `parseInt()`.
+There are math functions in `Math`, in `Number.prototype`, exported `isNumber`
+and even as globals, e.g. `parseInt()`.
 
 ### parseInt(string)
 
@@ -183,6 +183,19 @@ Example:
 
     parseInt('010');
       \=> 10
+
+### isNumber(value)
+
+The function isNumber() is based on
+[this StackOverflow answer](http://stackoverflow.com/a/1830844/978796):
+it checks if the parameter is a number.
+Examples:
+
+    var prototypes = require('prototypes');
+    prototypes.isNumber(5);
+      \=> true
+    prototypes.isNumber('hi');
+      \=> false
 
 ### Math.log10(number)
 

@@ -8,9 +8,11 @@
 
 // requires
 require('./lib/string.js');
-require('./lib/math.js');
+var mathLib = require('./lib/math.js');
 var objectLib = require('./lib/object.js');
 
 // exports
 exports.overwriteWith(objectLib);
+exports.overwriteWith(mathLib);
+
 
