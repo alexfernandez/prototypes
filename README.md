@@ -52,19 +52,23 @@ Check that the current string starts with the given substring. Example:
 
 Check that the current string ends with the given substring. Example:
 
-    'pepitus'.startsWith('tus');
+    'pepitus'.endsWith('tus');
       \=> true
 
 ### string.substringUpTo(str)
 
-Return the piece of string until the argument is found. Example:
+Return the piece of string until the argument is found;
+return the whole string if not found.
+Example:
 
     'hi.there'.substringUpTo('.');
        \=> 'hi'
 
 ### string.substringUpToLast(str)
 
-Return the piece of string until the last occurrence of the argument. Example:
+Return the piece of string until the last occurrence of the argument;
+return the whole string if not found.
+Example:
 
     'hi.there.you'.substringUpToLast('.');
        \=> 'hi.there'
