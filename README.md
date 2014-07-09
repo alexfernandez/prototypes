@@ -164,6 +164,17 @@ Example:
     {a: 'a'}.overwriteWith({b: 'b'});
       \=> {a: 'a', b: 'b'}
 
+## Array Prototypes
+
+The following array prototypes are provided.
+
+### array.contains(element)
+
+Check if the array contains the given element. Example:
+
+    ['a', 'b'].contains('a');
+      \=> true
+
 ## Math-related Functions
 
 There are math functions in `Math`, in `Number.prototype`, exported `isNumber`

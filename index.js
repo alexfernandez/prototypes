@@ -8,6 +8,7 @@
 
 // requires
 require('./lib/string.js');
+require('./lib/array.js');
 var mathLib = require('./lib/math.js');
 var objectLib = require('./lib/object.js');
 
