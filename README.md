@@ -175,6 +175,20 @@ Check if the array contains the given element. Example:
     ['a', 'b'].contains('a');
       \=> true
 
+### array.filterOut(checker)
+
+Similar to `array.filter()` but reversed: returns an array
+whose members do _not_ return `true` with the checker.
+Example:
+
+```
+['a', 'b', 'c1', 'c2'].filterOut(function(element)
+{
+    return element.startsWith('c');
+});
+  \=> true
+```
+
 ## Math-related Functions
 
 There are math functions in `Math`, in `Number.prototype`, exported `isNumber`
