@@ -175,6 +175,19 @@ Check if the array contains the given element. Example:
     ['a', 'b'].contains('a');
       \=> true
 
+### array.remove(element)
+
+Remove the element from the array if present, and return it.
+If not present, returns null. Example:
+
+```
+var array = ['a', 'b'];
+array.remove('a');
+  \=> 'a'
+array
+  \=> ['b']
+```
+
 ### array.filterOut(checker)
 
 Similar to `array.filter()` but reversed: returns an array
