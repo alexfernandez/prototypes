@@ -164,6 +164,57 @@ Example:
     {a: 'a'}.overwriteWith({b: 'b'});
       \=> {a: 'a', b: 'b'}
 
+### object.concat(otherObject)
+
+Return a new object that includes properties of the object
+and the other object. Does not modify the original object.
+Example:
+
+    {a: 'a'}.concat({b: 'b'});
+      \=> {a: 'a', b: 'b'}
+
+### object.forEach(callback)
+
+Call the callback for every value of the object.
+Example:
+
+```
+{a: 1, b: 2}.forEach(function(value)
+{
+    console.log(value);
+});
+  \=> 1
+      2
+```
+
+### object.filter(callback)
+
+Return a new object that only includes those properties of the object
+that return true for the given callback, i.e.:
+`callback(value) == true`.
+Does not modify the original object.
+Example:
+
+```
+{a: 1, b: 2}.forEach(function(value)
+{
+    return value > 1;
+});
+  \=> {b: 2}
+```
+
+### object.isArray()
+
+Return `true` if the object is an array, `false` otherwise.
+Examples:
+
+```
+[].isArray();
+  \=> true
+{}.isArray();
+  \=> false
+```
+
 ## Array Prototypes
 
 The following array prototypes are provided.
