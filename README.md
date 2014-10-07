@@ -212,6 +212,17 @@ Examples:
   \=> false
 ```
 
+### object.toArray()
+
+Return an array with the object property values. If already an array,
+returns the unmodified array.
+Example:
+
+```
+{a: 1, b: 2}.toArray();
+  \=> [1, 2]
+```
+
 ## Array Prototypes
 
 The following array prototypes are provided.
