@@ -2,9 +2,12 @@
 
 # prototypes
 
-Some common prototypes for node.js: string.startsWith(),
-object.countProperties() and more.
-Functions are added using Object.defineProperty() to avoid polluting new objects.
+Some common prototypes for node.js: `string.startsWith()`,
+`object.countProperties()` and more.
+Functions are added using `Object.defineProperty()` to avoid polluting new objects.
+
+Includes nice facilities for functional programming with objects:
+`object.forEach()`, `object.filter()` and so on.
 
 ## Installation
 
@@ -16,26 +19,18 @@ Or add to the dependencies of your project in your `package.json`.
 
 ## Usage
 
-This package adds some useful prototypes to String.
+This package adds some useful prototypes to `String`, `Object` and `Array`.
 To use in your package, you just have to require prototypes:
 
     require('prototypes');
 
-You do not need to assign the result to any variable, and in fact JSHint
-(and similar code checkers) may complain about an unused variable if you
-do this:
+There is no need to assign the result to any variable, since the prototypes
+are added automatically. It may in fact result in a warning in JSHint
+or similar code checkers.
 
-    var prototypes = require('prototypes');
-
-This last form is only required if you use any of the exported functions,
-which should be seldom the case.
-
-### License
-
-This package is published under the MIT license.
-You can integrate it in any commercial, closed software and/or make changes to the code with complete liberty.
-If you send your changes back to the main repo we will be grateful,
-but it is by no means required.
+Special care has been taken to avoid nasty interactions with other libraries:
+the new function prototypes don't appear in enumerations and can be overwritten
+in your own code.
 
 ## String Prototypes
 
@@ -324,4 +319,11 @@ Thanks to my current employer [MediaSmart Mobile](http://www.mediasmart.es/) for
 
 Thanks to [William Wicks](https://github.com/williamwicks) for letting me
 (even encouraging me to) plunder his [extensions](https://github.com/williamwicks/extensions) library.
+
+### License
+
+This package is published under the MIT license.
+You can integrate it in any commercial, closed software and/or make changes to the code with complete liberty.
+If you send your changes back to the main repo we will be grateful,
+but it is by no means required.
 
