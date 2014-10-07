@@ -171,15 +171,17 @@ Example:
 ### object.forEach(callback)
 
 Call the callback for every value of the object.
+Similar to `array.forEach()`, the callback will receive three parameters:
+value, key and the object itself.
 Example:
 
 ```
-{a: 1, b: 2}.forEach(function(value)
+{a: 1, b: 2}.forEach(function(value, key)
 {
-    console.log(value);
+    console.log(key + ': ' + value);
 });
-  \=> 1
-      2
+  \=> a: 1
+      b: 2
 ```
 
 ### object.filter(callback)
