@@ -7,7 +7,7 @@ Some common prototypes for node.js: `string.startsWith()`,
 Functions are added using `Object.defineProperty()` to avoid polluting new objects.
 
 Includes nice facilities for functional programming with objects:
-`object.forEach()`, `object.filter()` and so on.
+`object.forEach()`, `object.filterIn()` and so on.
 
 ## Installation
 
@@ -184,20 +184,38 @@ Example:
       b: 2
 ```
 
-### object.filter(callback)
+### object.filterIn(callback)
 
 Return a new object that only includes those properties of the object
-that return true for the given callback, i.e.:
+that return `true` for the given callback, i.e.:
 `callback(value) == true`.
 Does not modify the original object.
+For an array it is equivalent to `array.filter()`.
 Example:
 
 ```
-{a: 1, b: 2}.forEach(function(value)
+{a: 1, b: 2}.filterIn(function(value)
 {
     return value > 1;
 });
   \=> {b: 2}
+```
+
+### object.filterOut(callback)
+
+Return a new object that only includes those properties of the object
+that return `false` for the given callback, i.e.:
+`callback(value) != true`.
+Does not modify the original object.
+For an array it is equivalent to `array.filterOut()` added above.
+Example:
+
+```
+{a: 1, b: 2}.filterOut(function(value)
+{
+    return value > 1;
+});
+  \=> {a: 1}
 ```
 
 ### object.isArray()
