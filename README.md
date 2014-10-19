@@ -279,6 +279,16 @@ Example:
   \=> true
 ```
 
+### array.unique()
+
+Returns a new sorted array of unique elements.
+Throws out null and undefined elements. Example:
+
+```
+['c', 'a', 'b', 'c', 'b'].unique();
+  \=> ['a', 'b', 'c']
+```
+
 ## Math-related Functions
 
 There are math functions in `Math`, in `Number.prototype`, exported `isNumber`
