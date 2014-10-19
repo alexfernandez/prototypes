@@ -125,6 +125,17 @@ Example:
     'hello'.capitalize();
        \=> 'Hello'
 
+### string.format()
+
+Format a string using the same convention as `util.format()`:
+`%s` represents a string value, `%j` converts to JSON, and so on.
+Example:
+
+```
+'Hi %s, %j'.format('a', {});
+  \=> 'Hi a, {}'
+```
+
 ## Object Prototypes
 
 For objects some care must be taken before overwriting `Object.prototype`:
