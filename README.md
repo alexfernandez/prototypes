@@ -304,6 +304,26 @@ Throws out null and undefined elements. Example:
   \=> ['a', 'b', 'c']
 ```
 
+### array.first()
+
+Returns the first element of an array, or undefined
+for an empty array. Example:
+
+```
+['a', 'b', 'c'].first();
+  \=> 'a'
+```
+
+### array.last()
+
+Returns the last element of an array, or undefined
+for an empty array. Example:
+
+```
+['a', 'b', 'c'].last();
+  \=> 'c'
+```
+
 ## Math-related Functions
 
 There are math functions in `Math`, in `Number.prototype`, exported `isNumber`
