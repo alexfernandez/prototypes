@@ -190,7 +190,7 @@ Return a new object that only includes those properties of the object
 that return `true` for the given callback, i.e.:
 `callback(value) == true`.
 Does not modify the original object.
-For an array it is equivalent to `array.filter()`.
+Works also on arrays, equivalent to `array.filter()`.
 Example:
 
 ```
@@ -207,7 +207,7 @@ Return a new object that only includes those properties of the object
 that return `false` for the given callback, i.e.:
 `callback(value) != true`.
 Does not modify the original object.
-For an array it is equivalent to `array.filterOut()` added above.
+Works also on arrays.
 Example:
 
 ```
@@ -265,18 +265,22 @@ array
   \=> ['b']
 ```
 
+### array.filterIn(checker)
+
+Inherited from `object.filterIn(checker)`, works also on arrays.
+Identical to `array.filter(checker)`.
+
 ### array.filterOut(checker)
 
-Similar to `array.filter()` but reversed: returns an array
-whose members do _not_ return `true` with the checker.
-Example:
+Inherited from `object.filterIn(checker)`, works also on arrays.
+Similar to `array.filter()` but reversed. Example:
 
 ```
 ['a', 'b', 'c1', 'c2'].filterOut(function(element)
 {
     return element.startsWith('c');
 });
-  \=> true
+  \=> ['a', 'b']
 ```
 
 ### array.unique()
