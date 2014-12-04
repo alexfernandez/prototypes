@@ -36,10 +36,10 @@ exports.test = function(callback)
 	var tests = {
 		cleanObjects: testCleanObjects,
 	};
-	var libs = [ 'core', 'string', 'array', 'math', 'object' ];
-	libs.forEach(function(lib)
+	var files = [ 'core', 'string', 'array', 'math', 'object' ];
+	files.forEach(function(file)
 	{
-		tests[lib] = require('./lib/' + lib + '.js').test;
+		tests[file] = require('./test/' + file + '.js').test;
 	});
 	testing.run(tests, callback);
 };
