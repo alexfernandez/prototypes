@@ -10,7 +10,8 @@
 		"type": "git",
 		"url": "https://github.com/alexfernandez/prototypes"
 	},
-	"dependencies": {
+	"dependencies": {},
+	"devDependencies": {
 		"testing": "*"
 	},
 	"keywords" : ["prototypes", "prototype", "string", "object", "functional programming", "functional"],
@@ -19,7 +20,7 @@
 	},
 	"preferGlobal": false,
 	"scripts": {
-		"test": "node test.js"
+		"test": "node runTests.js"
 	},
 	"private": false
 }
