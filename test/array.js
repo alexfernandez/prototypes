@@ -60,6 +60,32 @@ function testFirstLast(callback)
 	testing.success(callback);
 }
 
+function testIntersection(callback)
+{
+	var arrayA = [1, 2, 3];
+	var arrayB = [3, 4, 5];
+	var arrayC = [4, 5, 6];
+	var empty = [];
+	testing.assertEquals(arrayA.intersect(arrayB), [3], 'Invalid intersection', callback);
+	testing.assertEquals(arrayB.intersect(arrayC), [4,5], 'Invalid intersection', callback);
+	testing.assertEquals(arrayA.intersect(arrayC), [], 'Invalid intersection', callback);
+	testing.assertEquals(arrayA.intersect(empty), [], 'Invalid intersection', callback);
+	testing.success(callback);
+}
+
+function testDifference(callback)
+{
+	var arrayA = [1, 2, 3];
+	var arrayB = [3, 4, 5];
+	var arrayC = [4, 5, 6];
+	var empty = [];
+	testing.assertEquals(arrayA.difference(arrayB), [1,2], 'Invalid difference', callback);
+	testing.assertEquals(arrayB.difference(arrayC), [3], 'Invalid difference', callback);
+	testing.assertEquals(arrayA.difference(arrayC), [1,2,3], 'Invalid difference', callback);
+	testing.assertEquals(arrayA.difference(empty), [1,2,3], 'Invalid difference', callback);
+	testing.success(callback);
+}
+
 /**
  * Run package tests.
  */
@@ -70,6 +96,8 @@ exports.test = function(callback)
 		testUnique,
 		testRemove,
 		testFirstLast,
+		testIntersection,
+		testDifference,
 	];
 	testing.run(tests, callback);
 };
