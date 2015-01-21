@@ -55,7 +55,7 @@ function testOverwriteObject(callback)
 		w: 0,
 	};
 	first.overwriteWith(third);
-	testing.assertEquals(first.countProperties(), 4, 'Overwritten with third should have 4 properties', callback);
+	testing.assertEquals(first.countProperties(), 5, 'Overwritten with third should have 4 properties', callback);
 	testing.assert(first.w === 0, 'Overwritten with 0 should be there', callback);
 	testing.success(callback);
 }

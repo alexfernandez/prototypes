@@ -170,6 +170,12 @@ Example:
     {a: 'a'}.overwriteWith({b: 'b'});
       \=> {a: 'a', b: 'b'}
 
+*Note*: properties which are `undefined` are not overwritten;
+all others (including `null`) are. For instance:
+
+    {a: 'a'}.overwriteWith({b: undefined, c: null});
+      \=> {a: 'a', c: null}
+
 ### object.concat(otherObject)
 
 Return a new object that includes properties of the object
