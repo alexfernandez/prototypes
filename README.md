@@ -1,5 +1,7 @@
 [![Build Status](https://secure.travis-ci.org/alexfernandez/prototypes.png)](http://travis-ci.org/alexfernandez/prototypes)
 
+[![Package quality](http://packagequality.com/badge/testing.png)](http://packagequality.com/#?package=testing)
+
 # prototypes
 
 Some common prototypes for node.js: `string.startsWith()`,
