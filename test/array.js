@@ -86,6 +86,21 @@ function testDifference(callback)
 	testing.success(callback);
 }
 
+function testToArray(callback)
+{
+	var object = {
+		a: 1,
+		b: 2,
+		c: 3,
+	};
+	var converted = Array.toArray(object);
+	var array = [1, 2, 3];
+	testing.assertEquals(converted, array, 'Invalid converted array', callback);
+	converted = Array.toArray(array);
+	testing.assertEquals(converted, array, 'Invalid reconverted array', callback);
+	testing.success(callback);
+}
+
 /**
  * Run package tests.
  */
@@ -98,6 +113,7 @@ exports.test = function(callback)
 		testFirstLast,
 		testIntersection,
 		testDifference,
+		testToArray,
 	];
 	testing.run(tests, callback);
 };
