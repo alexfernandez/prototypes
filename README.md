@@ -237,29 +237,6 @@ Example:
   \=> {a: 1}
 ```
 
-### object.isArray()
-
-Return `true` if the object is an array, `false` otherwise.
-Examples:
-
-```
-[].isArray();
-  \=> true
-{}.isArray();
-  \=> false
-```
-
-### object.toArray()
-
-Return an array with the object property values. If already an array,
-returns the unmodified array.
-Example:
-
-```
-{a: 1, b: 2}.toArray();
-  \=> [1, 2]
-```
-
 ## Array Prototypes
 
 The following array prototypes are provided.
@@ -331,6 +308,20 @@ for an empty array. Example:
 ['a', 'b', 'c'].last();
   \=> 'c'
 ```
+
+### Array.toArray(object)
+
+Return an array with the object property values. If already an array,
+returns the unmodified array.
+Example:
+
+```
+Array.toArray({a: 1, b: 2});
+  \=> [1, 2]
+```
+
+*Note*: this function resides in the `Array` global like `Array.isArray()`,
+instead of in individual arrays as the previous functions.
 
 ## Math-related Functions
 
