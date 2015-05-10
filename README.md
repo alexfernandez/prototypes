@@ -322,7 +322,8 @@ Array.toArray({a: 1, b: 2});
 
 *Note*: this function resides in the `Array` global like `Array.isArray()`,
 instead of in individual arrays as the previous functions.
-There was previously a function `object.toArray()` but it was removed due to
+In versions up to 0.3.4 there were functions `object.toArray()` and `object.isArray()`,
+but they were removed due to
 [incompatibilities](https://github.com/alexfernandez/prototypes/issues/8) with lodash.
 
 ## Math-related Functions
