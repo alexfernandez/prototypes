@@ -13,7 +13,7 @@ var testing = require('testing');
  * Test that a new object is clean: has no functions.
  * Same for string and array.
  */
-function testCleanObjects(callback)
+function testObjectsAreClean(callback)
 {
 	var object = {};
 	for (var key in object)
@@ -33,14 +33,19 @@ function testCleanObjects(callback)
  */
 exports.test = function(callback)
 {
-	var tests = {
-		cleanObjects: testCleanObjects,
-	};
+	var tests = {};
+
+	tests.objectsAreCleanBeforeLoadingLibrary = testObjectsAreClean;
+
 	var files = [ 'core', 'string', 'array', 'math', 'object' ];
 	files.forEach(function(file)
 	{
 		tests[file] = require('./test/' + file + '.js').test;
 	});
+
+	tests.objectsAreCleanAfterLoadingLibrary = testObjectsAreClean;
+
+
 	testing.run(tests, callback);
 };
 
