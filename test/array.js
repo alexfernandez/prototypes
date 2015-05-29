@@ -96,8 +96,7 @@ function testToArray(callback)
 	var converted = Array.toArray(object);
 	var array = [1, 2, 3];
 	testing.assertEquals(converted, array, 'Invalid converted array', callback);
-	converted = Array.toArray(array);
-	testing.assertEquals(converted, array, 'Invalid reconverted array', callback);
+	testing.assertEquals(Array.toArray(array) === array, true, 'Array should be returned unmodified', callback);
 	testing.success(callback);
 }
 
@@ -119,7 +118,7 @@ exports.test = function(callback)
 };
 
 // run tests if invoked directly
-if (__filename == process.argv[1])  
+if (__filename == process.argv[1])
 {
 	exports.test(testing.show);
 }
