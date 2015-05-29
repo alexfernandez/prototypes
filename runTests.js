@@ -7,25 +7,30 @@
 
 // requires
 var testing = require('testing');
+var _prettyPrint = require('util').inspect;
 
 
 /**
- * Test that a new object is clean: has no functions.
- * Same for string and array.
+ * Test that new objects, strings, arrays, numbers
+ * and regular expressions have no enumerable properties.
  */
 function testCleanObjects(callback)
 {
-	var object = {};
-	for (var key in object)
-	{
-		testing.fail('New object has attribute %s', key, callback);
-	}
-	var string = '';
-	for (key in string)
-	{
-		testing.fail('New string has attribute %s', key, callback);
-	}
+	_assertIsClean({}, callback);
+	_assertIsClean('', callback);
+	_assertIsClean([], callback);
+	_assertIsClean(41.5, callback);
+	_assertIsClean(/abc/, callback);
+
 	testing.success(callback);
+}
+
+function _assertIsClean(newObject, callback) {
+    for (var key in newObject) {
+		testing.failure('New object ' +
+			_prettyPrint(newObject) +
+			' has enumerable property %s', key, callback);
+    }
 }
 
 /**
