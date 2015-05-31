@@ -13,7 +13,7 @@ var testing = require('testing');
  * Test that new objects, strings, arrays, numbers
  * and regular expressions have no enumerable properties.
  */
-function testCleanObjects(callback)
+function testObjectsAreClean(callback)
 {
 	assertIsClean({}, callback);
 	assertIsClean('', callback);
@@ -35,14 +35,15 @@ function assertIsClean(newObject, callback) {
  */
 exports.test = function(callback)
 {
-	var tests = {
-		cleanObjects: testCleanObjects,
-	};
+	var tests = {};
+	tests.objectsAreCleanBeforeLoadingLibrary = testObjectsAreClean;
 	var files = [ 'core', 'string', 'array', 'math', 'object' ];
 	files.forEach(function(file)
 	{
 		tests[file] = require('./test/' + file + '.js').test;
 	});
+	tests.objectsAreCleanAfterLoadingLibrary = testObjectsAreClean;
+
 	testing.run(tests, callback);
 };
 
