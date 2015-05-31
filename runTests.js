@@ -7,7 +7,6 @@
 
 // requires
 var testing = require('testing');
-var _prettyPrint = require('util').inspect;
 
 
 /**
@@ -27,9 +26,7 @@ function testCleanObjects(callback)
 
 function _assertIsClean(newObject, callback) {
     for (var key in newObject) {
-		testing.failure('New object ' +
-			_prettyPrint(newObject) +
-			' has enumerable property %s', key, callback);
+		testing.failure('New object %j has enumerable property %s', newObject, key, callback);
     }
 }
 
