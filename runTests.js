@@ -15,16 +15,16 @@ var testing = require('testing');
  */
 function testCleanObjects(callback)
 {
-	_assertIsClean({}, callback);
-	_assertIsClean('', callback);
-	_assertIsClean([], callback);
-	_assertIsClean(41.5, callback);
-	_assertIsClean(/abc/, callback);
+	assertIsClean({}, callback);
+	assertIsClean('', callback);
+	assertIsClean([], callback);
+	assertIsClean(41.5, callback);
+	assertIsClean(/abc/, callback);
 
 	testing.success(callback);
 }
 
-function _assertIsClean(newObject, callback) {
+function assertIsClean(newObject, callback) {
     for (var key in newObject) {
 		testing.failure('New object %j has enumerable property %s', newObject, key, callback);
     }
