@@ -34,17 +34,13 @@ function testObjectsAreClean(callback)
 exports.test = function(callback)
 {
 	var tests = {};
-
 	tests.objectsAreCleanBeforeLoadingLibrary = testObjectsAreClean;
-
 	var files = [ 'core', 'string', 'array', 'math', 'object' ];
 	files.forEach(function(file)
 	{
 		tests[file] = require('./test/' + file + '.js').test;
 	});
-
 	tests.objectsAreCleanAfterLoadingLibrary = testObjectsAreClean;
-
 
 	testing.run(tests, callback);
 };
