@@ -111,6 +111,23 @@ Example:
     'pepitus'.replaceAll('p', 'c');
        \=> 'cecitus'
 
+### string.replaceIgnoreCase(str, replacement)
+
+Replace the first occurrence of a string ignoring case with the replacement.
+Example:
+
+    'Pepitus'.replaceAll('p', 'c');
+       \=> 'cecitus'
+
+### string.replaceAllIgnoreCase(str, replacement)
+
+Replace all occurrences of a string with the replacement,
+ignoring case.
+Example:
+
+    'Pepitus'.replaceAll('p', 'cor');
+       \=> 'corecoritus'
+
 ### string.repeat(number)
 
 Repeat the given string a few times.

@@ -71,6 +71,26 @@ function testReplaceAll(callback)
 	testing.success(callback);
 }
 
+function testReplaceIgnoreCase(callback)
+{
+	testing.assertEquals('Pepito'.replaceIgnoreCase('p', 'c'), 'cepito', 'Invalid replace ignore case', callback);
+	testing.assertEquals('Pepito'.replaceIgnoreCase('P', 'C'), 'Cepito', 'Invalid replace ignore case', callback);
+	testing.assertEquals('Pepito'.replaceIgnoreCase('ii', 'c'), 'Pepito', 'Invalid replace ignore case', callback);
+	testing.assertEquals('Pepito'.replaceIgnoreCase('p', 'CH'), 'CHepito', 'Invalid replace ignore case', callback);
+	testing.assertEquals('Pepito'.replaceIgnoreCase('ep', 'acurl'), 'Pacurlito', 'Invalid replace ignore case', callback);
+	testing.success(callback);
+}
+
+function testReplaceAllIgnoreCase(callback)
+{
+	testing.assertEquals('Pepito'.replaceAllIgnoreCase('p', 'c'), 'cecito', 'Invalid replace ignore case', callback);
+	testing.assertEquals('Pepito'.replaceAllIgnoreCase('P', 'C'), 'CeCito', 'Invalid replace ignore case', callback);
+	testing.assertEquals('Pepito'.replaceAllIgnoreCase('ii', 'c'), 'Pepito', 'Invalid replace ignore case', callback);
+	testing.assertEquals('Pepito'.replaceAllIgnoreCase('p', 'CH'), 'CHeCHito', 'Invalid replace ignore case', callback);
+	testing.assertEquals('Pepecito'.replaceAllIgnoreCase('pe', 'cor'), 'corcorcito', 'Invalid replace ignore case', callback);
+	testing.success(callback);
+}
+
 function testRepeat(callback)
 {
 	for (var i = 0; i < 10; i++)
@@ -109,6 +129,8 @@ exports.test = function(callback)
 		testSubstrings,
 		testContains,
 		testReplaceAll,
+		testReplaceIgnoreCase,
+		testReplaceAllIgnoreCase,
 		testRepeat,
 		testPad,
 		testFormat,
