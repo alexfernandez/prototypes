@@ -10,22 +10,24 @@ var testing = require('testing');
 
 
 /**
- * Test that a new object is clean: has no functions.
- * Same for string and array.
+ * Test that new objects, strings, arrays, numbers
+ * and regular expressions have no enumerable properties.
  */
-function testCleanObjects(callback)
+function testObjectsAreClean(callback)
 {
-	var object = {};
-	for (var key in object)
-	{
-		testing.fail('New object has attribute %s', key, callback);
-	}
-	var string = '';
-	for (key in string)
-	{
-		testing.fail('New string has attribute %s', key, callback);
-	}
+	assertIsClean({}, callback);
+	assertIsClean('', callback);
+	assertIsClean([], callback);
+	assertIsClean(41.5, callback);
+	assertIsClean(/abc/, callback);
+
 	testing.success(callback);
+}
+
+function assertIsClean(newObject, callback) {
+    for (var key in newObject) {
+		testing.failure('New object %j has enumerable property %s', newObject, key, callback);
+    }
 }
 
 /**
@@ -33,14 +35,15 @@ function testCleanObjects(callback)
  */
 exports.test = function(callback)
 {
-	var tests = {
-		cleanObjects: testCleanObjects,
-	};
+	var tests = {};
+	tests.objectsAreCleanBeforeLoadingLibrary = testObjectsAreClean;
 	var files = [ 'core', 'string', 'array', 'math', 'object' ];
 	files.forEach(function(file)
 	{
 		tests[file] = require('./test/' + file + '.js').test;
 	});
+	tests.objectsAreCleanAfterLoadingLibrary = testObjectsAreClean;
+
 	testing.run(tests, callback);
 };
 
