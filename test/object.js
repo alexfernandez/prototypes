@@ -133,6 +133,21 @@ function testFilter(callback)
 	testing.success(callback);
 }
 
+function testValues(callback)
+{
+	var object = {
+		first: 'a',
+		second: 'b',
+		1: 37,
+		'a-b.c': {},
+	};
+	var values = Object.values(object);
+	// strangely enough, Object.keys() returns property 1 first
+	var expected = [37, 'a', 'b', {}];
+	testing.assertEquals(values, expected, 'Invalid values()', callback);
+	testing.success(callback);
+}
+
 /**
  * Run package tests.
  */
@@ -144,6 +159,7 @@ exports.test = function(callback)
 		testConcat,
 		testFilter,
 		testForEach,
+		testValues,
 	];
 	testing.run(tests, callback);
 };
