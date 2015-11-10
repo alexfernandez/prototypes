@@ -254,6 +254,17 @@ Example:
   \=> {a: 1}
 ```
 
+## Object Functions
+
+Functions added to `Object` are available to operate on parameter objects.
+
+### Object.values(object)
+
+Get an array with all values in the object. Example:
+
+    Object.values({first: 'a', second: 'b'});
+      \=> ['a', 'b']
+
 ## Array Prototypes
 
 The following array prototypes are provided.
