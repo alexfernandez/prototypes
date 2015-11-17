@@ -86,6 +86,20 @@ function testDifference(callback)
 	testing.success(callback);
 }
 
+function testConcatAll(callback)
+{
+	var result = [1, 2, [3, 4, [5, 6]]].concatAll();
+	testing.assertEquals(result.length, 5, 'Should only flatten one level', callback);
+	testing.success(callback);
+}
+
+function testFlatten(callback)
+{
+	var result = [1, 2, [3, 4, [5, 6]]].flatten();
+	testing.assertEquals(result.length, 6, 'Should flatten all the way', callback);
+	testing.success(callback);
+}
+
 function testToArray(callback)
 {
 	var object = {
@@ -97,13 +111,6 @@ function testToArray(callback)
 	var array = [1, 2, 3];
 	testing.assertEquals(converted, array, 'Invalid converted array', callback);
 	testing.assertEquals(Array.toArray(array) === array, true, 'Array should be returned unmodified', callback);
-	testing.success(callback);
-}
-
-function testConcatAll(callback)
-{
-	var result = [1, 2, [3, 4, [5, 6]]].concatAll();
-	testing.assertEquals(result.length, 5, 'Should only flatten one level', callback);
 	testing.success(callback);
 }
 
@@ -119,8 +126,9 @@ exports.test = function(callback)
 		testFirstLast,
 		testIntersection,
 		testDifference,
-		testToArray,
 		testConcatAll,
+		testFlatten,
+		testToArray,
 	];
 	testing.run(tests, callback);
 };

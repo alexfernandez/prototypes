@@ -346,6 +346,15 @@ Flattens just one level of nested array. Example:
   \=> [1, 2, 3, 4, [5, 6]]
 ```
 
+### array.flatten()
+
+Flattens all levels of nested arrays. Example:
+
+```
+[1, 2, [3, 4, [5, 6]]].concatAll();
+  \=> [1, 2, 3, 4, 5, 6]
+```
+
 ### Array.toArray(object)
 
 Return an array with the object property values. If already an array,
