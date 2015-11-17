@@ -100,6 +100,13 @@ function testToArray(callback)
 	testing.success(callback);
 }
 
+function testConcatAll(callback)
+{
+	var result = [1, 2, [3, 4, [5, 6]]].concatAll();
+	testing.assertEquals(result.length, 5, 'Should only flatten one level', callback);
+	testing.success(callback);
+}
+
 /**
  * Run package tests.
  */
@@ -113,6 +120,7 @@ exports.test = function(callback)
 		testIntersection,
 		testDifference,
 		testToArray,
+		testConcatAll,
 	];
 	testing.run(tests, callback);
 };
