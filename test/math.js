@@ -18,6 +18,7 @@ function testParseInt(callback)
 	testing.assertEquals(parseInt('85'), 85, 'Decimal not interpreted', callback);
 	testing.assertEquals(parseInt('0010'), 10, 'Octal interpreted', callback);
 	testing.assertEquals(parseInt('10', 8), 8, 'Base 8 ignored', callback);
+	testing.assert(isNaN(parseInt(undefined)), 'parseInt(undefined) should yield NaN', callback);
 	testing.success(callback);
 }
 

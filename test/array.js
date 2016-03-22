@@ -83,6 +83,20 @@ function testDifference(callback)
 	testing.success(callback);
 }
 
+function testConcatAll(callback)
+{
+	var result = [1, 2, [3, 4, [5, 6]]].concatAll();
+	testing.assertEquals(result.length, 5, 'Should only flatten one level', callback);
+	testing.success(callback);
+}
+
+function testFlatten(callback)
+{
+	var result = [1, 2, [3, 4, [5, 6]]].flatten();
+	testing.assertEquals(result.length, 6, 'Should flatten all the way', callback);
+	testing.success(callback);
+}
+
 function testToArray(callback)
 {
 	var object = {
@@ -109,6 +123,8 @@ exports.test = function(callback)
 		testFirstLast,
 		testIntersection,
 		testDifference,
+		testConcatAll,
+		testFlatten,
 		testToArray,
 	];
 	testing.run(tests, callback);
