@@ -309,12 +309,12 @@ Similar to `array.filter()` but reversed. Example:
 
 ### array.unique()
 
-Returns a new sorted array of unique elements.
+Returns a new array of unique elements.
 Throws out null and undefined elements. Example:
 
 ```
 ['c', 'a', 'b', 'c', 'b'].unique();
-  \=> ['a', 'b', 'c']
+  \=> ['c', 'a', 'b']
 ```
 
 ### array.first()
