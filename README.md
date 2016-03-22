@@ -317,6 +317,12 @@ Throws out null and undefined elements. Example:
   \=> ['c', 'a', 'b']
 ```
 
+*Note*: Up to versions 1.1.x `array.unique()` returned a *sorted* array.
+However, nothing in the function name suggested this to be the case,
+which could (and did) lead to confusion.
+As of 1.2.0, that is no longer the case: `array.unique()` returns elements
+in the same order as the original array.
+
 ### array.first()
 
 Returns the first element of an array, or undefined
