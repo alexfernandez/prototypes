@@ -18,7 +18,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "jshint": "*",
+    "jshint": "^2.9.1",
     "testing": "*"
   },
   "keywords": [
