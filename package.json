@@ -18,7 +18,6 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "jshint": "*",
     "testing": "*"
   },
   "keywords": [
@@ -34,7 +33,7 @@
   },
   "preferGlobal": false,
   "scripts": {
-    "test": "jshint && node runTests.js"
+    "test": "node runTests.js"
   },
   "private": false
 }
