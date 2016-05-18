@@ -155,6 +155,39 @@ Example:
   \=> 'Hi a, {}'
 ```
 
+### string.escapeForWeb()
+
+Web safe escape. Escapes everything that escape does and the plus sign.
+Example:
+
+```
+'Hi, my name is Pepíto'.escapeForWeb();
+  \=> 'Hi%2C%20my%20name%20is%20Pep%EDto'
+```
+
+### string.unescapeForWeb()
+
+Unescapes everything that unescape does plus "+",
+and can also be applied on the result more than once without generating `URIError:
+URI malformed` as `decodeURIComponent()` does.
+Example:
+
+```
+'Hi%2C%20my%20name%20is%20Pep%EDto'.unescapeForWeb();
+  \=> 'Hi, my name is Pepíto'
+```
+
+### string.hashCode()
+
+Implement a hash code prototype for a string.
+Based on [Manwe's function](http://werxltd.com/wp/2010/05/13/javascript-implementation-of-javas-string-hashcode-method/).
+Example:
+
+```
+'Hi, my name is Pepíto'.hashCode();
+  \=> 1239770349
+```
+
 ## Object Prototypes
 
 For objects some care must be taken before overwriting `Object.prototype`:

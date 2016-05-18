@@ -118,6 +118,21 @@ function testFormat(callback)
 	testing.success(callback);
 }
 
+function testEscape(callback)
+{
+	testing.assertEquals('a%b'.escapeForWeb(), 'a%25b', 'Invalid escape for web', callback);
+	testing.assertEquals('a%25b'.unescapeForWeb(), 'a%b', 'Invalid escape for web', callback);
+	var string = 'Hi, mi name is Pepíto';
+	testing.assertEquals(string.escapeForWeb().unescapeForWeb(), string, 'Invalid escape + unescape', callback);
+	testing.success(callback);
+}
+
+function testHashCode(callback)
+{
+	testing.assertNotEquals('a'.hashCode(), 'b'.hashCode(), 'a and b have same hash code', callback);
+	testing.success(callback);
+}
+
 /**
  * Run package tests.
  */
@@ -134,6 +149,8 @@ exports.test = function(callback)
 		testRepeat,
 		testPad,
 		testFormat,
+		testEscape,
+		testHashCode,
 	];
 	testing.run(tests, callback);
 };
