@@ -1,6 +1,6 @@
 {
 	"name": "prototypes",
-	"version": "1.1.0",
+	"version": "1.2.0",
 	"description": "Some common prototypes for node.js: string.startsWith(), object.countProperties() and more. Facilities for functional programming with objects: object.forEach(), object.filter(). Functions are added safely using Object.defineProperty().",
 	"homepage": "https://github.com/alexfernandez/prototypes",
 	"contributors": ["Alex Fernández <alexfernandeznpm@gmail.com>"],
