@@ -19,19 +19,16 @@ function testContains(callback)
 	testing.success(callback);
 }
 
-function testUnique(callback) {
+function testUnique(callback)
+{
 	var array = [];
 	testing.assertEquals(array.unique(), [], 'Array should be empty', callback);
-
-	array = [4,1,6];
-	testing.assertEquals(array.unique(), [1,4,6], '', callback);
-
-	array = [4,1,6,9,0,5,9,9,9,9,5,5,5,1,1,4];
-	testing.assertEquals(array.unique(), [0,1,4,5,6,9], '', callback);
-
+	array = [4, 1, 6];
+	testing.assertEquals(array.unique(), [4, 1, 6], 'Not sorted', callback);
+	array = [4, 1, 6, 9, 0, 5, 9, 9, 9, 9, 5, 5, 5, 1, 1, 4];
+	testing.assertEquals(array.unique(), [4, 1, 6, 9, 0, 5], 'Longer not sorted', callback);
 	array = [null, null, 3, null, 3];
 	testing.assertEquals(array.unique(), [3], 'Null test', callback);
-
 	array = [0, undefined, null];
 	testing.assertEquals(array.unique(), [0], 'Falsey test', callback);
 

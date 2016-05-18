@@ -24,7 +24,9 @@ Or add to the dependencies of your project in your `package.json`.
 This package adds some useful prototypes to `String`, `Object` and `Array`.
 To use in your package, you just have to require prototypes:
 
-    require('prototypes');
+```js
+require('prototypes');
+```
 
 There is no need to assign the result to any variable, since the prototypes
 are added automatically. It may in fact result in a warning in JSHint
@@ -42,15 +44,19 @@ The following string prototypes are provided.
 
 Check that the current string starts with the given substring. Example:
 
-    'pepitus'.startsWith('pep');
-      \=> true
+```js
+'pepitus'.startsWith('pep');
+//=> true
+```
 
 ### string.endsWith(str)
 
 Check that the current string ends with the given substring. Example:
 
-    'pepitus'.endsWith('tus');
-      \=> true
+ ```js
+'pepitus'.endsWith('tus');
+//=> true
+```
 
 ### string.substringUpTo(str)
 
@@ -58,8 +64,10 @@ Return the piece of string until the argument is found;
 return the whole string if not found.
 Example:
 
-    'hi.there'.substringUpTo('.');
-       \=> 'hi'
+```js
+'hi.there'.substringUpTo('.');
+//=> 'hi'
+```
 
 ### string.substringUpToLast(str)
 
@@ -67,57 +75,71 @@ Return the piece of string until the last occurrence of the argument;
 return the whole string if not found.
 Example:
 
-    'hi.there.you'.substringUpToLast('.');
-       \=> 'hi.there'
+```js
+'hi.there.you'.substringUpToLast('.');
+//=> 'hi.there'
+```
 
 ### string.substringFrom(str)
 
 Return the piece of string starting with the argument; empty string if not found.
 Example:
 
-    'hi.there'.substringFrom('.');
-       \=> 'there'
+```js
+'hi.there'.substringFrom('.');
+//=> 'there'
+```
 
 ### string.substringFromLast(str)
 
 Return the piece from the last occurrence of the argument; empty string if not found.
 Example:
 
-    'hi.there.you'.substringFromLast('.');
-       \=> 'you'
+```js
+'hi.there.you'.substringFromLast('.');
+//=> 'you'
+```
 
 ### string.contains(str)
 
-Find out if the string contains the argument at any position.
+Find out if the string contains the argument at any position. Case-sensitive.
 Example:
 
-    'abcde'.contains('bcd');
-       \=> true
+```js
+'abcde'.contains('bcd');
+//=> true
+```
 
 ### string.containsIgnoreCase(str)
 
 Find out if the string contains the argument at any position,
-ignoring case.
+case-insensitive.
 Example:
 
-    'aBcDe'.contains('bCd');
-       \=> true
+```js
+'aBcDe'.containsIgnoreCase('bCd');
+//=> true
+```
 
 ### string.replaceAll(str, replacement)
 
 Replace all occurrences of a string with the replacement.
 Example:
 
-    'pepitus'.replaceAll('p', 'c');
-       \=> 'cecitus'
+```js
+'pepitus'.replaceAll('p', 'c');
+//=> 'cecitus'
+```
 
 ### string.replaceIgnoreCase(str, replacement)
 
 Replace the first occurrence of a string ignoring case with the replacement.
 Example:
 
-    'Pepitus'.replaceAll('p', 'c');
-       \=> 'cecitus'
+```js
+'Pepitus'.replaceAll('p', 'c');
+//=> 'cecitus'
+```
 
 ### string.replaceAllIgnoreCase(str, replacement)
 
@@ -125,24 +147,30 @@ Replace all occurrences of a string with the replacement,
 ignoring case.
 Example:
 
-    'Pepitus'.replaceAll('p', 'cor');
-       \=> 'corecoritus'
+```js
+'Pepitus'.replaceAll('p', 'cor');
+//=> 'corecoritus'
+```
 
 ### string.repeat(number)
 
 Repeat the given string a few times.
 Example:
 
-    'ab'.repeat(3);
-       \=> 'ababab'
+```js
+'ab'.repeat(3);
+//=> 'ababab'
+```
 
 ### string.capitalize()
 
 Capitalize a string: first letter upper case, rest as is.
 Example:
 
-    'hello'.capitalize();
-       \=> 'Hello'
+```js
+'hello'.capitalize();
+//=> 'Hello'
+```
 
 ### string.format()
 
@@ -150,9 +178,9 @@ Format a string using the same convention as `util.format()`:
 `%s` represents a string value, `%j` converts to JSON, and so on.
 Example:
 
-```
+```js
 'Hi %s, %j'.format('a', {});
-  \=> 'Hi a, {}'
+//=> 'Hi a, {}'
 ```
 
 ### string.escapeForWeb()
@@ -203,30 +231,38 @@ Count the number of properties in an object.
 Does not count inherited properties: uses Object.keys().
 Example:
 
-    {a: 'a'}.countProperties();
-      \=> 1
+```js
+{a: 'a'}.countProperties();
+//=> 1
+```
 
 You can also pass a string or a function as a filter:
 
-    {hello: 'a'}.countProperties('ll');
-      \=> 1
+```js
+{hello: 'a'}.countProperties('ll');
+//=> 1
 
-    {hello: 'a'}.countProperties(function(key) { return key.length == 5 });
-      \=> 1
+{hello: 'a'}.countProperties(function(key) { return key.length == 5 });
+//=> 1
+```
 
 ### object.overwriteWith(overwriter)
 
 Overwrite properties in the original with the given object.
 Example:
 
-    {a: 'a'}.overwriteWith({b: 'b'});
-      \=> {a: 'a', b: 'b'}
+```js
+{a: 'a'}.overwriteWith({b: 'b'});
+//=> {a: 'a', b: 'b'}
+```
 
 *Note*: properties which are `undefined` are not overwritten;
 all others (including `null`) are. For instance:
 
-    {a: 'a'}.overwriteWith({b: undefined, c: null});
-      \=> {a: 'a', c: null}
+```js
+{a: 'a'}.overwriteWith({b: undefined, c: null});
+//=> {a: 'a', c: null}
+```
 
 ### object.concat(otherObject)
 
@@ -234,8 +270,10 @@ Return a new object that includes properties of the object
 and the other object. Does not modify the original object.
 Example:
 
-    {a: 'a'}.concat({b: 'b'});
-      \=> {a: 'a', b: 'b'}
+```js
+{a: 'a'}.concat({b: 'b'});
+//=> {a: 'a', b: 'b'}
+```
 
 ### object.forEach(callback)
 
@@ -244,13 +282,12 @@ Similar to `array.forEach()`, the callback will receive three parameters:
 value, key and the object itself.
 Example:
 
-```
-{a: 1, b: 2}.forEach(function(value, key)
-{
-    console.log(key + ': ' + value);
+```js
+{a: 1, b: 2}.forEach(function(value, key) {
+  console.log(key + ': ' + value);
 });
-  \=> a: 1
-      b: 2
+//=> a: 1
+//=> b: 2
 ```
 
 ### object.filterIn(callback)
@@ -262,12 +299,11 @@ Does not modify the original object.
 Works also on arrays, equivalent to `array.filter()`.
 Example:
 
-```
-{a: 1, b: 2}.filterIn(function(value)
-{
-    return value > 1;
+```js
+{a: 1, b: 2}.filterIn(function(value) {
+  return value > 1;
 });
-  \=> {b: 2}
+//=> {b: 2}
 ```
 
 ### object.filterOut(callback)
@@ -279,12 +315,11 @@ Does not modify the original object.
 Works also on arrays.
 Example:
 
-```
-{a: 1, b: 2}.filterOut(function(value)
-{
+```js
+{a: 1, b: 2}.filterOut(function(value) {
     return value > 1;
 });
-  \=> {a: 1}
+//=> {a: 1}
 ```
 
 ## Object Functions
@@ -295,8 +330,10 @@ Functions added to `Object` are available to operate on parameter objects.
 
 Get an array with all values in the object. Example:
 
-    Object.values({first: 'a', second: 'b'});
-      \=> ['a', 'b']
+ ```js
+Object.values({first: 'a', second: 'b'});
+//=> ['a', 'b']
+```
 
 ## Array Prototypes
 
@@ -306,20 +343,23 @@ The following array prototypes are provided.
 
 Check if the array contains the given element. Example:
 
-    ['a', 'b'].contains('a');
-      \=> true
+```js
+['a', 'b'].contains('a');
+//=> true
+```
 
 ### array.remove(element)
 
 Remove the element from the array if present, and return it.
 If not present, returns null. Example:
 
-```
+```js
 var array = ['a', 'b'];
 array.remove('a');
-  \=> 'a'
+//=> 'a'
+
 array
-  \=> ['b']
+//=> ['b']
 ```
 
 ### array.filterIn(checker)
@@ -332,32 +372,37 @@ Identical to `array.filter(checker)`.
 Inherited from `object.filterIn(checker)`, works also on arrays.
 Similar to `array.filter()` but reversed. Example:
 
-```
-['a', 'b', 'c1', 'c2'].filterOut(function(element)
-{
-    return element.startsWith('c');
+```js
+['a', 'b', 'c1', 'c2'].filterOut(function(element) {
+  return element.startsWith('c');
 });
-  \=> ['a', 'b']
+//=> ['a', 'b']
 ```
 
 ### array.unique()
 
-Returns a new sorted array of unique elements.
+Returns a new array of unique elements.
 Throws out null and undefined elements. Example:
 
-```
+```js
 ['c', 'a', 'b', 'c', 'b'].unique();
-  \=> ['a', 'b', 'c']
+//=> ['c', 'a', 'b']
 ```
+
+*Note*: Up to versions 1.1.x `array.unique()` returned a *sorted* array.
+However, nothing in the function name suggested this to be the case,
+which could (and did) lead to confusion.
+As of 1.2.0, that is no longer the case: `array.unique()` returns elements
+in the same order as the original array.
 
 ### array.first()
 
 Returns the first element of an array, or undefined
 for an empty array. Example:
 
-```
+```js
 ['a', 'b', 'c'].first();
-  \=> 'a'
+//=> 'a'
 ```
 
 ### array.last()
@@ -365,27 +410,27 @@ for an empty array. Example:
 Returns the last element of an array, or undefined
 for an empty array. Example:
 
-```
+```js
 ['a', 'b', 'c'].last();
-  \=> 'c'
+//=> 'c'
 ```
 
 ### array.concatAll()
 
 Flattens just one level of nested array. Example:
 
-```
+```js
 [1, 2, [3, 4, [5, 6]]].concatAll();
-  \=> [1, 2, 3, 4, [5, 6]]
+//=> [1, 2, 3, 4, [5, 6]]
 ```
 
 ### array.flatten()
 
 Flattens all levels of nested arrays. Example:
 
-```
+```js
 [1, 2, [3, 4, [5, 6]]].concatAll();
-  \=> [1, 2, 3, 4, 5, 6]
+//=> [1, 2, 3, 4, 5, 6]
 ```
 
 ### Array.toArray(object)
@@ -394,9 +439,9 @@ Return an array with the object property values. If already an array,
 returns the unmodified array.
 Example:
 
-```
+```js
 Array.toArray({a: 1, b: 2});
-  \=> [1, 2]
+//=> [1, 2]
 ```
 
 *Note*: this function resides in the `Array` global like `Array.isArray()`,
@@ -416,9 +461,11 @@ By default parseInt() requires a radix (or base), or it will recreate the radix 
 if the string starts with a leading zero,
 then it interprets that you are parsing an octal number.
 
-    // unsafe parseInt()
-    parseInt('010');
-      \=> 8
+```js
+// unsafe parseInt()
+parseInt('010');
+//=> 8
+```
 
 This library replaces the global function with a safe version that uses radix 10
 unless told otherwise.
@@ -426,8 +473,10 @@ The last person that wanted to convert octal with leading zeroes
 is probably programming in C anyway.
 Example:
 
-    parseInt('010');
-      \=> 10
+ ```js
+parseInt('010');
+//=> 10
+```
 
 ### isNumber(value)
 
@@ -436,39 +485,50 @@ The function isNumber() is based on
 it checks if the parameter is a number.
 Examples:
 
-    var prototypes = require('prototypes');
-    prototypes.isNumber(5);
-      \=> true
-    prototypes.isNumber('hi');
-      \=> false
+```js
+var prototypes = require('prototypes');
+
+prototypes.isNumber(5);
+//=> true
+
+prototypes.isNumber('hi');
+//=> false
+```
 
 ### Math.log10(number)
 
 Logarithm in base 10. Example:
 
-    Math.log10(10);
-      \=> 1
+```js
+Math.log10(10);
+//=> 1
+```
 
 ### number.toRad()
 
 Convert a number in degrees to radians. Example:
 
-    var n = 180;
-    n.toRad();
-      \=> 3.141592653589793
+```js
+var n = 180;
+
+n.toRad();
+//=> 3.141592653589793
+```
 
 ## RegExp Prototypes
 
 Prototypes used to enhance regular expressions (the RegExp prototype). Can also be used with the syntax
-/.../.
+`/.../.`
 
 ### makeGlobal()
 
 Returns a new regular expression which is always global.
 Example:
 
-    'pepitus'.replace(/p/.makeGlobal(), 'c');
-      \=> 'cecitus'
+```js
+'pepitus'.replace(/p/.makeGlobal(), 'c');
+//=> 'cecitus'
+```
 
 ## Acknowledgements
 
