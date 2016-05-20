@@ -148,6 +148,37 @@ function testValues(callback)
 	testing.success(callback);
 }
 
+function testRenameProperties(callback)
+{
+	var abcObj = {};
+
+	var object = {
+		first: 'a',
+		second: 'b',
+		1: 37,
+		'a-b.c': abcObj,
+		'control': 'Not Renamed'
+	};
+
+	var newNames = {first: 'mapFirst', second: 2, 1: 'One', 'a-b.c': 'abc'};
+	object.renameProperties(newNames);
+
+	// Test that all properties (except the control property) have been mapped away.
+	testing.assertEquals(object.hasOwnProperty('first'), false, callback);
+	testing.assertEquals(object.hasOwnProperty('second'), false, callback);
+	testing.assertEquals(object.hasOwnProperty(1), false, callback);
+	testing.assertEquals(object.hasOwnProperty('a-b.c'), false, callback);
+	testing.assertEquals(object.control, 'Not Renamed', callback);
+
+	// Test that the newly mapped properties are present and correct.
+	testing.assertEquals(object.mapFirst, 'a', callback);
+	testing.assertEquals(object[2], 'b', callback);
+	testing.assertEquals(object.One, 37, callback);
+	testing.assertEquals(object.abc, abcObj, callback);
+
+	testing.success(callback);
+}
+
 /**
  * Run package tests.
  */
@@ -160,6 +191,7 @@ exports.test = function(callback)
 		testFilter,
 		testForEach,
 		testValues,
+		testRenameProperties,
 	];
 	testing.run(tests, callback);
 };
