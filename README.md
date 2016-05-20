@@ -322,6 +322,16 @@ Example:
 //=> {a: 1}
 ```
 
+### object.renameProperties(mappingObject)
+
+Rename an object's properties based on another 'mapping' object's key/value pairs.
+Example:
+
+```js
+{a: 1, b: 2}.renameProperties({a: 'z', b: 'y'});
+//=> {z: 1, y: 2}
+```
+
 ## Object Functions
 
 Functions added to `Object` are available to operate on parameter objects.
