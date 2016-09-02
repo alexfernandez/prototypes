@@ -408,20 +408,36 @@ in the same order as the original array.
 ### array.first()
 
 Returns the first element of an array, or undefined
-for an empty array. Example:
+for an empty array.
+If a condition is passed, returns the first element
+that satisfies the condition.
+Examples:
 
 ```js
 ['a', 'b', 'c'].first();
 //=> 'a'
+
+['aa', 'b', 'c'].first(function(element) {
+	return element.length == 1;
+});
+//=> 'b'
 ```
 
 ### array.last()
 
 Returns the last element of an array, or undefined
-for an empty array. Example:
+for an empty array.
+If a condition is passed, returns the first element
+that satisfies the condition.
+Example:
 
 ```js
 ['a', 'b', 'c'].last();
+//=> 'c'
+
+['aa', 'b', 'c'].last(function(element) {
+	return element.length == 1;
+});
 //=> 'c'
 ```
 

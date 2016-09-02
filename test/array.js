@@ -51,10 +51,17 @@ function testFirstLast(callback)
 	var array = [1, 2, 3];
 	testing.assertEquals(array.first(), 1, 'Invalid first element', callback);
 	testing.assertEquals(array.last(), 3, 'Invalid last element', callback);
+	testing.assertEquals(array.first(isLargerThanOne), 2, 'Invalid first conditional element', callback);
+	testing.assertEquals(array.last(isLargerThanOne), 3, 'Invalid last conditional element', callback);
 	var empty = [];
 	testing.assertEquals(empty.first(), undefined, 'Invalid first empty element', callback);
 	testing.assertEquals(empty.last(), undefined, 'Invalid last empty element', callback);
 	testing.success(callback);
+}
+
+function isLargerThanOne(value)
+{
+	return value > 1;
 }
 
 function testIntersection(callback)
