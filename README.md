@@ -202,7 +202,7 @@ Example:
 
 ```
 'Hi%2C%20my%20name%20is%20Pep%EDto'.unescapeForWeb();
-  \=> 'Hi, my name is Pepíto'
+  //=> 'Hi, my name is Pepíto'
 ```
 
 ### string.hashCode()
@@ -211,9 +211,20 @@ Implement a hash code prototype for a string.
 Based on [Manwe's function](http://werxltd.com/wp/2010/05/13/javascript-implementation-of-javas-string-hashcode-method/).
 Example:
 
-```
+```js
 'Hi, my name is Pepíto'.hashCode();
-  \=> 1239770349
+  //=> 1239770349
+```
+
+### string.pad()
+
+Pads a string to the desired length,
+with the given character.
+Example:
+
+```js
+'8'.pad(2, '0');
+//=> '08'
 ```
 
 ## Object Prototypes
