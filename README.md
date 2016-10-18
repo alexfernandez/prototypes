@@ -185,7 +185,7 @@ Example:
 
 ### string.escapeForWeb()
 
-Web safe escape. Escapes everything that escape does and the plus sign.
+Web safe escape. Escapes everything that escape does, and also the plus sign and slash.
 Example:
 
 ```
@@ -195,7 +195,7 @@ Example:
 
 ### string.unescapeForWeb()
 
-Unescapes everything that unescape does plus "+",
+Unescapes everything that unescape does, and also "+" and "/",
 and can also be applied on the result more than once without generating `URIError:
 URI malformed` as `decodeURIComponent()` does.
 Example:
