@@ -227,6 +227,27 @@ Example:
 //=> '08'
 ```
 
+### String.createToken(value)
+
+Generate a new unique token in base36
+(alphanumerical lowercase characters).
+It uses a random value and the current date,
+and optionally the given parameter.
+Should be quite strong,
+even if not cryptographically so.
+Example:
+
+```js
+String.createToken();
+//=> 'dqna29cy639ekxtfiprdpg72h'
+```
+
+*Note*: this function resides in the `Array` global like `Array.isArray()`,
+instead of in individual arrays as the previous functions.
+In versions up to 0.3.4 there were functions `object.toArray()` and `object.isArray()`,
+but they were removed due to
+[incompatibilities](https://github.com/alexfernandez/prototypes/issues/8) with lodash.
+
 ## Object Prototypes
 
 For objects some care must be taken before overwriting `Object.prototype`:

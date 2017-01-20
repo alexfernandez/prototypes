@@ -144,6 +144,25 @@ function testHashCode(callback)
 	testing.success(callback);
 }
 
+function testCreateToken(callback)
+{
+	var tokens = {};
+	var token;
+	for (var i = 0; i < 1000; i++)
+	{
+		token = String.createToken(i);
+		testing.assert(!tokens[token], 'Repeated token', callback);
+		tokens[token] = true;
+	}
+	for (i = 0; i < 1000; i++)
+	{
+		token = String.createToken();
+		testing.assert(!tokens[token], 'Repeated token', callback);
+		tokens[token] = true;
+	}
+	testing.success(callback);
+}
+
 /**
  * Run package tests.
  */
@@ -163,6 +182,7 @@ exports.test = function(callback)
 		testEscape,
 		testEscapeAndUnescape,
 		testHashCode,
+		testCreateToken,
 	];
 	testing.run(tests, callback);
 };
