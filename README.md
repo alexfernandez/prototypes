@@ -278,6 +278,30 @@ You can also pass a string or a function as a filter:
 //=> 1
 ```
 
+### object.hasProperties()
+
+Simply find out if the object has any properties at all.
+Most of the time you just want to see if you have an empty object;
+this function is for you!
+Faster than counting all properties.
+Does not count inherited properties: uses hasOwnProperty().
+Example:
+
+```js
+{hello: 'a'}.hasProperties();
+//=> true
+
+{}.hasProperties();
+//=> false
+```
+
+Common usage:
+
+```js
+var params = JSON.parse(string);
+if (!params.hasProperties()) return;
+```
+
 ### object.overwriteWith(overwriter)
 
 Overwrite properties in the original with the given object.

@@ -34,6 +34,13 @@ function getFilter(length)
 	};
 }
 
+function testHasProperties(callback)
+{
+	testing.assert({a: 1}.hasProperties(), 'Should have properties', callback);
+	testing.assert(!{}.hasProperties(), 'Should not have properties', callback);
+	testing.success(callback);
+}
+
 function testOverwriteObject(callback)
 {
 	var first = {
@@ -186,6 +193,7 @@ exports.test = function(callback)
 {
 	var tests = [
 		testCountProperties,
+		testHasProperties,
 		testOverwriteObject,
 		testConcat,
 		testFilter,
