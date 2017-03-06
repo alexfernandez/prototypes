@@ -131,7 +131,7 @@ function testEscapeAndUnescape(callback)
 {
 	var input = '~!@#$%^&*(){}[]=:/,;?+\'"\\';
 	var escaped = input.escapeForWeb();
-	testing.assertEquals(escaped, '%7E%21@%23%24%25%5E%26*%28%29%7B%7D%5B%5D%3D%3A%2F%2C%3B%3F%2B%27%22%5C', 'Invalid escaped text with symbols', callback);
+	testing.assertEquals(escaped, '%7E%21@%23%24%25%5E%26%2A%28%29%7B%7D%5B%5D%3D%3A%2F%2C%3B%3F%2B%27%22%5C', 'Invalid escaped text with symbols', callback);
 	var firstPass = escaped.unescapeForWeb();
 	testing.assertEquals(firstPass, input, 'Invalid escape + unescape with symbols', callback);
 	testing.assertEquals(input, firstPass.unescapeForWeb(), 'Invalid escape + unescape + unescape with symbols', callback);
