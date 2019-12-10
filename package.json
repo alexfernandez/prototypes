@@ -29,7 +29,7 @@
     "functional"
   ],
   "engines": {
-    "node": "*"
+    "node": ">=8"
   },
   "preferGlobal": false,
   "scripts": {
