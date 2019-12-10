@@ -19,6 +19,13 @@ Simply install using npm:
 
 Or add to the dependencies of your project in your `package.json`.
 
+### Compatibility
+
+Compatibility with Node.js v6 or earlier was broken in 3.0.0:
+
+* Node.js v8 or later: ^3.0.0.
+* Node.js v6 or earlier: ^2.3.5.
+
 ## Usage
 
 This package adds some useful prototypes to `String`, `Object` and `Array`.
