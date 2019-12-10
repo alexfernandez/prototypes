@@ -12,5 +12,4 @@ var mathLib = require('./lib/math.js');
 var objectLib = require('./lib/object.js');
 
 // exports
-exports.overwriteWith(objectLib);
-exports.overwriteWith(mathLib);
+exports={...objectLib, ...mathLib }
