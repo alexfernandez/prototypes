@@ -12,4 +12,5 @@ var mathLib = require('./lib/math.js');
 var objectLib = require('./lib/object.js');
 
 // exports
-exports={...objectLib, ...mathLib }
+module.exports={...objectLib, ...mathLib}
+
