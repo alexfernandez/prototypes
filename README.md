@@ -11,6 +11,9 @@ Functions are added using `Object.defineProperty()` to avoid polluting new objec
 Includes nice facilities for functional programming with objects:
 `object.forEach()`, `object.filterIn()` and so on.
 
+**Warning:** does not play well with current Node.js versions.
+Please do not use in any new projects.
+
 ## Installation
 
 Simply install using npm:
@@ -621,7 +624,7 @@ Example:
 
 ## Acknowledgements
 
-Thanks to my current employer [MediaSmart Mobile](http://www.mediasmart.es/) for their permission to reuse some of the prototypes we have cooked together.
+Thanks to my previous employer [MediaSmart Mobile](http://mediasmart.io/) for their permission to reuse some of the prototypes we have cooked together.
 
 Thanks to [William Wicks](https://github.com/williamwicks) for letting me
 (even encouraging me to) plunder his [extensions](https://github.com/williamwicks/extensions) library.
